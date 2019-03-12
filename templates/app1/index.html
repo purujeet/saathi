@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saathi</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app1/main.css' %}">
+</head>
+<body bgcolor="darkgrey">
+{% include 'app1/header.html' %}
+{% block head %}
+{% endblock %}
+<center>
+
+    <div class="box" background="grey" border="true" align="left">
+<div class="user_resp">
+        <h3 align="left">{{ user_res0 }}</h3>
+</div>
+        <h3 align="right">
+            <pre>{{ bot_resp0 }}</pre>
+
+            <pre>{{ bot_resp_hi0 }}</pre>
+        </h3>
+
+        <br>
+
+
+        <h3 align="left">{{ user_res1 }}</h3>
+
+        <h3 align="right">
+            <pre>{{ bot_resp1 }}</pre>
+            <pre>{{ bot_resp_hi1 }}</pre>
+        </h3>
+
+
+        <br>
+
+        <h3 align="left" style="width:auto">{{ user_res2 }}</h3>
+
+        <h3 align="right">
+            <pre>{{ bot_resp2 }}</pre>
+            <pre>{{ bot_resp_hi2 }}</pre>
+        </h3>
+
+
+        <br>
+
+        <h3 align="left">{{ user_res3 }}</h3>
+
+        <h3 align="right">
+            <pre>{{ bot_resp3 }}</pre>
+            <pre>{{ bot_resp_hi3 }}</pre>
+        </h3>
+
+
+        <center>
+            <h2>
+                <form method="post" action="/app1/submit/">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" style="color:red" value="SUBMIT"/>
+
+                </form>
+            </h2>
+        </center>
+    </div>
+</center>
+{% include 'app1/footer.html' %}
+{% block foot %}
+{% endblock %}
+</body>
+</html>
